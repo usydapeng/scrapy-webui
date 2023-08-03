@@ -5,7 +5,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile-scrapyd
-    image: ccr.ccs.tencentyun.com/tosee-web/scrapyd:0.0.1
+    image: usydapeng/scrapyd:0.0.1
     restart: always
     ports:
       - 16800:16800
@@ -19,7 +19,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile-scrapydweb
-    image: ccr.ccs.tencentyun.com/tosee-web/scrapydweb:0.0.1
+    image: usydapeng/scrapydweb:0.0.1
     restart: always
     ports:
       - 15001:15001
