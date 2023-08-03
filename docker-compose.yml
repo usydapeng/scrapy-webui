@@ -2,7 +2,9 @@ version: "3.1"
 
 services:
   scrapyd:
-    # build: .
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile-scrapyd
     image: ccr.ccs.tencentyun.com/tosee-web/scrapyd:0.0.1
     restart: always
     ports:
@@ -10,8 +12,13 @@ services:
       - 16801:16801
       - 17905:7900
     volumes:
-      - ./scrapyd-storage:/app
+      - ./scrapyd-storage/dbs:/app/dbs
+      - ./scrapyd-storage/logs:/app/logs
+      - ./scrapyd-storage/gerapy:/app/gerapy
   scrapydweb:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile-scrapydweb
     image: ccr.ccs.tencentyun.com/tosee-web/scrapydweb:0.0.1
     restart: always
     ports:

@@ -1,2 +1,3 @@
 scrapyd-storage/gerapy/logs
 scrapyd-storage/logs
+scrapyd-storage/twistd.pid

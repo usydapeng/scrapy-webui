@@ -18,3 +18,4 @@ EXPOSE 16801
 COPY supervisor.conf.d/selenium.conf /etc/supervisor/conf.d/
 COPY supervisor.conf.d/start-scrapyd.sh /opt/bin/
 COPY supervisor.conf.d/start-gerapy.sh /opt/bin/
+COPY supervisor.conf.d/start-logparser.sh /opt/bin/
