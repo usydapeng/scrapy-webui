@@ -1,0 +1,11 @@
+FROM python:3.6.15-slim-buster
+
+RUN pip install scrapydweb
+
+WORKDIR /app
+
+COPY scrapydweb_settings_v10.py /app/
+
+EXPOSE 15001
+
+CMD ["scrapydweb"]

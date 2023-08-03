@@ -1,0 +1,20 @@
+FROM selenium/standalone-chrome:115.0-20230801
+
+WORKDIR /app
+
+RUN wget 'https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh' \
+    && chmod +x Miniconda3-latest-Linux-x86_64.sh \
+    && ./Miniconda3-latest-Linux-x86_64.sh -b \
+    && /home/seluser/miniconda3/bin/conda init bash \
+    && rm Miniconda3-latest-Linux-x86_64.sh
+
+RUN /home/seluser/miniconda3/bin/pip install scrapyd \
+    && /home/seluser/miniconda3/bin/pip install gerapy
+COPY scrapyd-default.conf /home/seluser/miniconda3/lib/python3.11/site-packages/scrapyd/default_scrapyd.conf
+
+EXPOSE 16800
+EXPOSE 16801
+
+COPY supervisor.conf.d/selenium.conf /etc/supervisor/conf.d/
+COPY supervisor.conf.d/start-scrapyd.sh /opt/bin/
+COPY supervisor.conf.d/start-gerapy.sh /opt/bin/

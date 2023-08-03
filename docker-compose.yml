@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  scrapyd:
+    # build: .
+    image: ccr.ccs.tencentyun.com/tosee-web/scrapyd:0.0.1
+    restart: always
+    ports:
+      - 16800:16800
+      - 16801:16801
+      - 17905:7900
+    volumes:
+      - ./scrapyd-storage:/app
+  scrapydweb:
+    image: ccr.ccs.tencentyun.com/tosee-web/scrapydweb:0.0.1
+    restart: always
+    ports:
+      - 15001:15001
+    depends_on:
+      - scrapyd
