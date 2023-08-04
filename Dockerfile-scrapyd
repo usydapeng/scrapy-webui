@@ -10,7 +10,7 @@ RUN wget 'https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh'
 
 RUN /home/seluser/miniconda3/bin/pip install scrapyd \
     && /home/seluser/miniconda3/bin/pip install gerapy
-COPY scrapyd-default.conf /home/seluser/miniconda3/lib/python3.11/site-packages/scrapyd/default_scrapyd.conf
+COPY scrapyd-default.conf /etc/scrapyd/scrapyd.conf
 
 EXPOSE 16800
 EXPOSE 16801

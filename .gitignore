@@ -1,3 +1,6 @@
 scrapyd-storage/gerapy/logs
 scrapyd-storage/logs
+scrapyd-storage/eggs
+scrapyd-storage/dbs
 scrapyd-storage/twistd.pid
+scrapydweb-storage

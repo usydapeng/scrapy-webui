@@ -4,7 +4,7 @@ RUN pip install scrapydweb
 
 WORKDIR /app
 
-COPY scrapydweb_settings_v10.py /app/
+COPY scrapydweb_settings_v10.py /usr/local/lib/python3.6/site-packages/scrapydweb/default_settings.py
 
 EXPOSE 15001
 

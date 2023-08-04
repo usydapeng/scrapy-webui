@@ -365,4 +365,4 @@ DATA_PATH = os.environ.get('DATA_PATH', '/app/scrapydweb_data')
 # 'postgresql://username:password@127.0.0.1:5432'
 # 'sqlite:///C:/Users/username'
 # 'sqlite:////home/username'
-DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////app/sqllitedb')
+DATABASE_URL = os.environ.get('DATABASE_URL', '')

@@ -15,6 +15,7 @@ services:
       - ./scrapyd-storage/dbs:/app/dbs
       - ./scrapyd-storage/logs:/app/logs
       - ./scrapyd-storage/gerapy:/app/gerapy
+      - ./scrapyd-storage/eggs:/app/eggs
   scrapydweb:
     # build:
     #   context: .
@@ -25,3 +26,5 @@ services:
       - 15001:15001
     depends_on:
       - scrapyd
+    volumes:
+      - ./scrapydweb-storage:/app/scrapydweb_data
